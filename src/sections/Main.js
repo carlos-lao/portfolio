@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 //Internal Imports
-import { logo } from "../assets";
+import { logo, mainBackground } from "../assets";
 
 const Main = () => {
     const [showName, setShowName] = useState(true)
@@ -24,16 +24,22 @@ const Main = () => {
     }, [] );
 
     return (
-        <div id="main" className="section d-flex align-items-center">
-            <div style={{width: '100%'}}>
-                <div className="d-flex align-items-start align-items-sm-end" style={{ height: '10vh' }}>
-                    <h3 id="subtitle" className="monospace m-3 ms-sm-5">- computer science<br />- linguistics</h3>
-                </div>
-                <div className="d-flex justify-content-center align-items-center" style={{ height: '65vh' }}>
-                    <img src={logo} id="spinning-logo" alt="spinning website logo" />
-                </div>
-                <div id="title-container" className="ms-3 ms-sm-5" style={{ height: '15vh', opacity: showName ? '100%' : '0%' }}>
-                    <h1 id="title">CARLOS<span className="d-none d-sm-inline"> LAO</span></h1>
+        <div id="main" className="section">
+            <img src={mainBackground} id="bg-img" className="bg-main" alt="black and white image of waves" />
+            <div id="title-overlay" className="bg-main"></div>
+            <div className="container">
+                <div className="d-flex align-items-center">
+                    <div style={{width: '100%'}}>
+                        <div className="d-flex align-items-start align-items-sm-end" style={{ height: '10vh' }}>
+                            <h3 id="subtitle" className="monospace m-3 ms-sm-5">- computer science<br />- linguistics</h3>
+                        </div>
+                        <div className="d-flex justify-content-center align-items-center" style={{ height: '65vh' }}>
+                            <img src={logo} id="spinning-logo" alt="spinning website logo" />
+                        </div>
+                        <div id="title-container" className="ms-3 ms-sm-5" style={{ height: '15vh', opacity: showName ? '100%' : '0%' }}>
+                            <h1 id="title">CARLOS<span className="d-none d-sm-inline"> LAO</span></h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

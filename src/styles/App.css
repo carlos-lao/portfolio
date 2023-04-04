@@ -71,6 +71,7 @@ a:hover {
 
 .section {
   min-height: 100vh;
+  position: relative;
 }
 
 .fullscreen-overlay {
@@ -155,6 +156,12 @@ a:hover {
 }
 
 /* About section */
+#about {
+  box-shadow: 0 5px 10px #888;
+  clip-path: polygon(0 0, 100% 0, 100% 200%, 0 200%);
+  z-index: 1;
+}
+
 #about-greeting {
   font-weight: 900;
   font-size: 3.5rem;
@@ -178,9 +185,16 @@ a:hover {
 }
 
 #portrait {
-  max-height: 60vh;
-  border-radius: 15px;
   border: solid #baff00 5px;
+  min-height: 400px;
+  height: 60vh;
+  transition: 0.25s ease-in;
+}
+
+#portrait:hover {
+  border-color: white;
+  transform: translate(-10px, -10px);
+  box-shadow: 10px 10px #baff00;
 }
 
 #suggestion-box {
@@ -200,5 +214,103 @@ a:hover {
 
 .about-text {
   font-weight: 300;
-  font-size: 1.05rem;
+  font-size: 1rem;
+}
+
+/* Skills section */
+#skills {
+  background-color: #DEDEDE;
+}
+
+#skills-title {
+  font-weight: 900;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  margin-bottom: 13vh;
+  color: #181818;
+}
+
+#skills-text {
+  font-weight: 200;
+  font-size: 1.25rem;
+  margin-bottom: 5vh;
+  color: #181818;
+}
+
+.skill-logo {
+  height: 20vh;
+}
+
+.skill-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  color:#181818;
+}
+
+.slider-container {
+  height: 23vh;
+}
+
+.slider {
+  transform: translateX(0%);
+  animation: scroll-skills 40s linear infinite;
+}
+
+@keyframes scroll-skills {
+  to { transform: translateX(-50%); }
+}
+
+.slider-fade {
+  position: absolute;
+  height: 100%;
+  width: 15%;
+}
+
+#left-fade {
+  left: 0;
+  background: linear-gradient(to left, #DEDEDE00 0%,#DEDEDE 100%);
+}
+
+#right-fade {
+  right: 0;
+  background: linear-gradient(to right, #DEDEDE00 0%,#DEDEDE 100%);
+}
+
+#resume-btn {
+  margin-top: 13vh;
+  border-radius: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+  border: solid #8dc002 3px;
+  background-color: transparent;
+  color: #8dc002;
+  transition: 0.25s ease-in;
+}
+
+#resume-btn:hover {
+  border-color: #181818 !important;
+  background-color: #baff00!important;
+  color: #181818 !important;
+  font-size: 1.6rem;
+  border-radius: 1.6rem;
+  transform: translateY(-0.05rem);
+}
+
+#resume-btn:active {
+  background-color: #99d100 !important;
+}
+
+/* Footer */
+#footer {
+  bottom: 0;
+  background-color: #2d2d2d;
+  width: 100%;
+}
+
+#footer-text {
+  font-size: 0.8rem;
+  margin: 0;
+  color: #FAFAFA;
 }

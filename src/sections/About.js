@@ -28,30 +28,6 @@ const About = () => {
     const interval = useRef()
     const currIdx = useRef()
 
-    // Handles form submission and suppresses redirect
-    useEffect(() => {
-        const submitForm = (e) => {
-            e.preventDefault();
-            const data = new FormData(form);
-            const action = e.target.action;
-            fetch(action, {
-                method: 'POST',
-                body: data,
-            })
-            .then(() => {
-                alert("Success!");
-            })
-        }
-
-        const form = document.getElementById('suggestion-form')
-        console.log(form)
-        // form.addEventListener("submit", submitForm)
-
-        // return () => {
-        //     form.removeEventListener("submit", submitForm)
-        // }
-    }, [])
-
     // Adds typing effect
     useEffect(() => {
         let pauseCounter = 0;
@@ -109,8 +85,6 @@ const About = () => {
                 ></button>
                 <form 
                     id="suggestion-form"
-                    method='POST' 
-                    action={FORM_SUBMIT} 
                     className='d-flex flex-column align-items-center fill-parent'
                 >
                     <input 
@@ -129,7 +103,15 @@ const About = () => {
                         disabled={suggestion.length === 0}
                         onClick={e => {
                             e.preventDefault()
-                            console.log(suggestion)
+                            const data = new FormData(document.getElementById("suggestion-form"));
+                            const action = FORM_SUBMIT;
+                            fetch(action, {
+                                method: 'POST',
+                                body: data,
+                            })
+
+                            setShowOverlay(false)
+                            setSuggestion("")
                         }}
                     >Submit</button>
                 </form>
@@ -138,37 +120,41 @@ const About = () => {
     )
 
     return (
-        <div id="about" className='section d-flex align-items-center'>
-            {showOverlay && renderOverlay()}
-            <div>
-                <div className='row align-items-center'>
-                    <div className='col-12 col-lg-6 pb-4 pb-lg-0'>
-                        <h2 id="about-greeting">
-                            {currGreeting.join('')}<span aria-hidden={true} id='cursor'></span>
-                        </h2>
-                        <h2 className="pb-4" id="about-name">I'm Carlos.</h2>
-                        <p className="about-text">
-                            After graduating from USC with a double major in linguistics and computer science, I am excited to break into the world of software
-                            engineering as an aspiring full-stack developer. Whatever the task at hand, I'm ready to take on any challenge with no hesitation.
-                        </p>
-                        <p className="about-text">
-                            As a naturally curious person and passionate learner, I am always looking to expand my skillset. This has made me an adaptable
-                            problem-solver: ready to put new skills to use at a moment's notice. When the next game-changing development is always just around
-                            the corner, I'm there waiting.
-                        </p>
-                        <p className="about-text">
-                            When I'm not coding, I like to run, sing, play guitar, learn new languages, and—more recently—crochet. I'm also a musical theater kid at heart.
-                            Obviously, I'm always open to picking up new hobbies! Since you're here anyway, why not&nbsp;
-                            <a id="suggest" href='#' onClick={() => {
-                                setShowOverlay(true);
-                                return false;
-                            }}>
-                                drop me a suggestion for what to pick up next
-                            </a>?
-                        </p>
-                    </div>
-                    <div className='col-12 col-lg-6 d-flex justify-content-center'>
-                        <img src={portrait} id="portrait"/>
+        <div id="about" className='section py-5 py-lg-auto'>
+            <div className='container px-xl-5'>
+                <div className='d-flex align-items-center justify-content-between'>
+                    {showOverlay && renderOverlay()}
+                    <div>
+                        <div className='row align-items-center'>
+                            <div className='col-12 col-lg-7 pb-4 pb-lg-0'>
+                                <h2 id="about-greeting">
+                                    {currGreeting.join('')}<span aria-hidden={true} id='cursor'></span>
+                                </h2>
+                                <h2 className="pb-4" id="about-name">I'm Carlos.</h2>
+                                <p className="about-text">
+                                    After graduating from USC with a double major in linguistics and computer science, I am excited to break into the world of software
+                                    engineering as an aspiring full-stack developer. Whatever the task at hand, I'm ready to take on any challenge with no hesitation.
+                                </p>
+                                <p className="about-text">
+                                    As a naturally curious person and passionate learner, I am always looking to expand my skillset. This has made me an adaptable
+                                    problem-solver: ready to put new skills to use at a moment's notice. When the next game-changing development is always just around
+                                    the corner, I'm there waiting.
+                                </p>
+                                <p className="about-text">
+                                    When I'm not coding, I like to run, sing, play guitar, learn new languages, and—more recently—crochet. I'm also a musical theater kid at heart.
+                                    Obviously, I'm always open to picking up new hobbies! Since you're here anyway, why not&nbsp;
+                                    <a id="suggest" href='#' onClick={() => {
+                                        setShowOverlay(true);
+                                        return false;
+                                    }}>
+                                        drop me a suggestion for what to pick up next
+                                    </a>?
+                                </p>
+                            </div>
+                            <div className='col-12 col-lg-5 d-flex justify-content-center align-items-center'>
+                                <img src={portrait} id="portrait"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

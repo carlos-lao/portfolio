@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 // internal
 import './styles/App.css';
-import { mainBackground } from './assets';
 import * as Section from './sections';
 
 const App = () => {
@@ -29,11 +28,12 @@ const App = () => {
 
   return (
     <div>
-      <img src={mainBackground} id="bg-img" className="bg-main" alt="black and white image of waves" />
-      <div id="title-overlay" className="bg-main"></div>
-      <div className="container">
-        <Section.Main />
-        <Section.About />
+      <Section.Main />
+      <Section.About />
+      <Section.Skills />
+      <Section.Projects />
+      <div id="footer" className='d-flex py-3 justify-content-center'>
+        <p id="footer-text">© 2023 | Made and designed by Carlos Lao</p>
       </div>
     </div>
   );
