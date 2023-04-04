@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+// external
+import { useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 
-function App() {
+// internal
+import './styles/App.css';
+import { mainBackground } from './assets';
+import * as Section from './sections';
+
+const App = () => {
+
+
+  // disables fake anchor tags with href='#'
+  useEffect(() => {
+    const disableAnchor = (e) => {
+      e.preventDefault()
+    }
+
+    document.querySelectorAll("a[href^='#']").forEach(node => {
+      node.addEventListener('click', disableAnchor);
+    })
+
+    return ()  => {
+      document.querySelectorAll("a[href^='#']").forEach(node => {
+        node.addEventListener('click', disableAnchor);
+      })
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <img src={mainBackground} id="bg-img" className="bg-main" alt="black and white image of waves" />
+      <div id="title-overlay" className="bg-main"></div>
+      <div className="container">
+        <Section.Main />
+        <Section.About />
+      </div>
     </div>
   );
 }
