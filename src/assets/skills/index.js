@@ -12,6 +12,7 @@ import firebaseLogo from './firebase.png';
 import opencvLogo from './opencv.png';
 import kerasLogo from './keras.png';
 import sqlLogo from './sql.png';
+import phpLogo from './php.png';
 
 const skills = [
     {name: "Python", image: pythonLogo},
@@ -21,6 +22,7 @@ const skills = [
     {name: "HTML/CSS", image: htmlcssLogo},
     {name: "JavaScript", image: jsLogo},
     {name: "React(+N)", image: reactLogo},
+    {name: "PHP", image: phpLogo},
     {name: "SQL", image: sqlLogo},
     {name: "Express.js", image: expressLogo},
     {name: "MongoDB", image: mongodbLogo},

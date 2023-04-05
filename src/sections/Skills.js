@@ -18,7 +18,7 @@ const Skills = () => {
         <div className='d-flex flex-column justify-content-center align-items-center'>
           <h2 id='skills-title'>\ SKILLS</h2>
           <div className='w-100 my-auto'>
-            <p id='skills-text' className='text-center'>Some technologies I've built with in the past :</p>
+            <p id='skills-text' className='text-center'>I've worked with...</p>
             <div className="w-100 position-relative overflow-hidden slider-container">
               <div className="d-flex align-items-center justify-content-around position-absolute slider">
                 {skills.map((skill, i) => (
