@@ -26,12 +26,13 @@ const Projects = () => {
     )
 
     return (
-        <div className='section d-flex'>
+        <div id='projects' className='section d-flex'>
             {displayedProject != null && renderOverlay()}
             <div className='container my-auto'>
                 <div className='row'>
-                    <div className='col-12 col-xxl-5 mb-3 mb-xxl-0 d-flex justify-content-center justify-content-xxl-start align-items-center'>
-                        <h2 id="projects-title">PROJECTS<span id="underscore"></span></h2>
+                    <div className='col-12 col-xxl-5 d-flex flex-column justify-content-center align-items-center align-items-xxl-start'>
+                        <h2 id="projects-title" className='mb-3 mb-xxl-4'>PROJECTS<span id="underscore"></span></h2>
+                        <p id='projects-subtitle' className='text-center'>a sneak peek at some of my work...</p>
                     </div>
                     <div id='projects-wrapper' className='col-12 col-xxl-7 d-flex flex-column align-items-stretch'>
                         {projects.map((project, i) => (

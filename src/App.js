@@ -12,6 +12,7 @@ const App = () => {
       <Section.About />
       <Section.Skills />
       <Section.Projects />
+      <Section.Contact />
       <div id="footer" className='d-flex py-3 justify-content-center'>
         <p id="footer-text">© 2023 | Made and designed by Carlos Lao</p>
       </div>

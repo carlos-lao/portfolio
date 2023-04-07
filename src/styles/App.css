@@ -63,7 +63,7 @@ a:hover {
 .bg-main {
   position: absolute;
   width: 100%;
-  height: 90vh;
+  height: 100%;
 }
 
 .nav-link {
@@ -321,6 +321,12 @@ a:hover {
   letter-spacing: 1rem;
 }
 
+#projects-subtitle {
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
 #projects-wrapper div {
   flex-basis: 100%;
 }
@@ -411,6 +417,60 @@ a:hover {
 .wip-label-bottom {
   bottom: 0.5rem;
   right: -2rem;
+}
+
+/* Contact */
+#contact {
+  min-height: 85vh;
+}
+
+#contact-overlay {
+  box-sizing: border-box;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #181818 0%, #181818dd 50%, #181818 100%);
+}
+
+#contact-title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  letter-spacing: 0.3rem;
+  color:#54E86D;
+}
+
+#contact-subtitle {
+  font-weight: 100;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+}
+
+#contact-container {
+  height: 20rem;
+}
+
+.contact-link {
+  aspect-ratio: 1 / 1;
+  height: 4.2rem;
+  border-radius: 50%;
+  border: #fafafa solid 3px;
+  transition: 0.25s ease-out;
+}
+
+.contact-label {
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  margin-left: 1rem;
+  transition: 0.25s ease-out;
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  transition: 0.25s ease-out;
+}
+
+.contact-wrapper:hover .contact-label {
+  color: #54E86D;
 }
 
 /* Footer */
