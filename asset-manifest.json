@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.875bf02d.css",
-    "main.js": "/portfolio/static/js/main.23ad9b9e.js",
+    "main.css": "/portfolio/static/css/main.b978a5a0.css",
+    "main.js": "/portfolio/static/js/main.ece17318.js",
     "static/media/portrait.jpg": "/portfolio/static/media/portrait.2ae868c1ac479f6ca5e5.jpg",
     "static/media/main-bg.jpeg": "/portfolio/static/media/main-bg.ae25211bc85bb6f54520.jpeg",
     "static/media/python.png": "/portfolio/static/media/python.a47b8a346bdd1f18cd78.png",
@@ -15,6 +15,7 @@
     "static/media/firebase.png": "/portfolio/static/media/firebase.f111334d3de668addcfc.png",
     "static/media/html-css.png": "/portfolio/static/media/html-css.4e56db268e82f3944e03.png",
     "static/media/aws-amplify.png": "/portfolio/static/media/aws-amplify.341ca4a252cbe836726f.png",
+    "static/media/trojancheck-icon.png": "/portfolio/static/media/trojancheck-icon.4575decc9adf76b25815.png",
     "static/media/mongodb.png": "/portfolio/static/media/mongodb.7a16fc61d457c9e340e2.png",
     "static/media/java.png": "/portfolio/static/media/java.f5dd86c3ef6ef3f85acf.png",
     "static/media/clubsc-icon.png": "/portfolio/static/media/clubsc-icon.8c777b22aa657129625c.png",
@@ -22,11 +23,11 @@
     "static/media/express.png": "/portfolio/static/media/express.86337f614092031626c8.png",
     "static/media/javascript.png": "/portfolio/static/media/javascript.045099358b891da0f552.png",
     "index.html": "/portfolio/index.html",
-    "main.875bf02d.css.map": "/portfolio/static/css/main.875bf02d.css.map",
-    "main.23ad9b9e.js.map": "/portfolio/static/js/main.23ad9b9e.js.map"
+    "main.b978a5a0.css.map": "/portfolio/static/css/main.b978a5a0.css.map",
+    "main.ece17318.js.map": "/portfolio/static/js/main.ece17318.js.map"
   },
   "entrypoints": [
-    "static/css/main.875bf02d.css",
-    "static/js/main.23ad9b9e.js"
+    "static/css/main.b978a5a0.css",
+    "static/js/main.ece17318.js"
   ]
 }
