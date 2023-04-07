@@ -1,5 +1,5 @@
 import ClubSCIcon from './clubsc-icon.png';
-import TrojanCheckIcon from './clubsc-icon.png';
+import TrojanCheckIcon from './trojancheck-icon.png';
 
 const DEVICES = {
     computer: "computer",
@@ -26,10 +26,19 @@ const projects = [
         finished: true,
     },
     {
+        name: "SLH Repository",
+        description: "A repository for substance abuse and lived history accounts for the USC Annenberg School of Communications.",
+        source: "",
+        image: TrojanCheckIcon,
+        demo: null,
+        device: DEVICES.phone,
+        finished: true,
+    },
+    {
         name: "UniLease",
         description: "An application to help university students sublease their property.",
         source: "",
-        image: null,
+        image: ClubSCIcon,
         demo: null,
         device: DEVICES.phone,
         finished: false,

@@ -8,11 +8,7 @@ const Main = () => {
     const [showName, setShowName] = useState(true)
 
     const controlName = () => {
-        if (window.scrollY > window.innerHeight * 0.25) {
-        setShowName(false);
-        } else {
-        setShowName(true);
-        }
+        setShowName(window.scrollY <= (window.innerHeight * 0.25))
     };
 
     useEffect( ()=> {

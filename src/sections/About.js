@@ -23,10 +23,25 @@ const About = () => {
     const [currGreeting, setCurrGreeting] = useState(greetings[langIdx].split(''))
     const [showOverlay, setShowOverlay] = useState(false)
     const [suggestion, setSuggestion] = useState('')
+    const [liftPortrait, setLiftPortrait] = useState(false)
 
+    const animationIndicator = useRef(null)
     const direction = useRef(DIRECTION.backward)
     const interval = useRef()
     const currIdx = useRef()
+
+    const controlPortrait = () => {
+        const {y, height} = animationIndicator.current.getClientRects()[0];
+        setLiftPortrait(y < window.innerHeight - (0.25 * height) && y > (-0.25 * height))
+    };
+
+    useEffect( ()=> {
+        window.addEventListener('scroll', controlPortrait)
+
+        return () => {
+            window.removeEventListener('scroll', controlPortrait)
+        }
+    }, [] );
 
     // Adds typing effect
     useEffect(() => {
@@ -80,7 +95,7 @@ const About = () => {
                 <button type="button" className="btn-close" aria-label="Close" id="close-suggestion-box"
                     onClick={() => {
                         setShowOverlay(false)
-                        setSuggestion("")
+                        this.setSuggestion("")
                     }}
                 ></button>
                 <form 
@@ -92,9 +107,7 @@ const About = () => {
                         type="text" 
                         className="form-control my-3" 
                         placeholder="What should I learn next?" 
-                        value={suggestion}
                         autoComplete="off"
-                        onChange={e => {setSuggestion(e.target.value)}} 
                     />
                     <button 
                         type="submit" 
@@ -120,13 +133,13 @@ const About = () => {
     )
 
     return (
-        <div id="about" className='section py-5 py-lg-auto'>
-            <div className='container px-xl-5'>
+        <div id="about" className='section pb-5 pb-lg-0 d-flex'>
+            {showOverlay && renderOverlay()}
+            <div className='container px-xl-5 my-auto'>
                 <div className='d-flex align-items-center justify-content-between'>
-                    {showOverlay && renderOverlay()}
                     <div>
                         <div className='row align-items-center'>
-                            <div className='col-12 col-lg-7 pb-4 pb-lg-0'>
+                            <div className='col-12 col-lg-6 col-xl-7 pb-4 pb-lg-0'>
                                 <h2 id="about-greeting">
                                     {currGreeting.join('')}<span aria-hidden={true} id='cursor'></span>
                                 </h2>
@@ -143,7 +156,8 @@ const About = () => {
                                 <p className="about-text">
                                     When I'm not coding, I like to run, sing, play guitar, learn new languages, and—more recently—crochet. I'm also a musical theater kid at heart.
                                     Obviously, I'm always open to picking up new hobbies! Since you're here anyway, why not&nbsp;
-                                    <a id="suggest" href='#' onClick={() => {
+                                    <a id="suggest" href='#' onClick={(e) => {
+                                        e.preventDefault()
                                         setShowOverlay(true);
                                         return false;
                                     }}>
@@ -151,8 +165,8 @@ const About = () => {
                                     </a>?
                                 </p>
                             </div>
-                            <div className='col-12 col-lg-5 d-flex justify-content-center align-items-center'>
-                                <img src={portrait} id="portrait"/>
+                            <div className='col-12 col-lg-6 col-xl-5 d-flex justify-content-center align-items-center'>
+                                <img src={portrait} id="portrait" className={liftPortrait ? 'hover-portrait' : ''} ref={animationIndicator}/>
                             </div>
                         </div>
                     </div>

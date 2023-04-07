@@ -13,12 +13,12 @@ const Skill = ({ image, name }) => (
 
 const Skills = () => {
   return (
-    <div id="skills" className='section py-5 py-lg-auto'>
-      <div className='container'>
+    <div id="skills" className='section d-flex'>
+      <div className='container my-auto'>
         <div className='d-flex flex-column justify-content-center align-items-center'>
-          <h2 id='skills-title'>\ SKILLS</h2>
+          <h2 id='skills-title'>\SKILLS</h2>
           <div className='w-100 my-auto'>
-            <p id='skills-text' className='text-center'>I've worked with...</p>
+            <p id='skills-text' className='text-center'>I've worked with . . .</p>
             <div className="w-100 position-relative overflow-hidden slider-container">
               <div className="d-flex align-items-center justify-content-around position-absolute slider">
                 {skills.map((skill, i) => (
