@@ -23,13 +23,13 @@ const Contact = () => {
             <h3 id='contact-subtitle' className='text-center text-md-left'>Let's get in touch.</h3>
           </div>
           <div className='d-flex justify-content-evenly align-items-start mt-3'>
-            <ContactLink label='See Github' href='https://github.com/carlos-lao'>
+            <ContactLink label='See Github' href='https://github.com/carlos-lao' target='_blank'>
               <i className="bi bi-github contact-icon"></i>
             </ContactLink>
             <ContactLink label='Send an Email' href='mailto:cdrivlao@gmail.com'>
               <i className='bi bi-envelope-fill contact-icon'></i>
             </ContactLink>
-            <ContactLink label='Visit LinkedIn' href='https://www.linkedin.com/in/carlos-lao/'>
+            <ContactLink label='Visit LinkedIn' href='https://www.linkedin.com/in/carlos-lao/' target='_blank'>
               <i className='bi bi-linkedin contact-icon'></i>
             </ContactLink>
           </div>
