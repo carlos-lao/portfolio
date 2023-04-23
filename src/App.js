@@ -12,10 +12,6 @@ const overlayInitState = {visible: false, content: null}
 const App = () => {
   const [overlay, setOverlay] = useState(overlayInitState)
 
-  useEffect(() => {
-    console.log(overlay)
-  }, [overlay])
-
   const renderOverlay = () => (
     <div className='fullscreen-overlay d-flex justify-content-center align-items-center'>
       {overlay.content()}

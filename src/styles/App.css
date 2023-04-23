@@ -336,7 +336,7 @@ a:hover {
 }
 
 .project-card {
-  padding: 0 10px;
+  padding: 10px;
   padding-top: 2.5rem;
   border-radius: 25px;
   transition: 0.25s ease-out;
@@ -389,6 +389,7 @@ a:hover {
 
 .project-card-text {
   font-size: 1rem;
+  margin: 0;
 }
 
 .project-card-disabled .project-card-text {
@@ -419,14 +420,6 @@ a:hover {
 /* Contact */
 #contact {
   min-height: 85vh;
-}
-
-#contact-overlay {
-  box-sizing: border-box;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  background: linear-gradient(to bottom, #181818 0%, #181818dd 50%, #181818 100%);
 }
 
 #contact-title {

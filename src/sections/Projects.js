@@ -6,7 +6,7 @@ import { projects } from '../assets'
 
 const ProjectCard = ({ src, onClick }) => (
     <div className='w-100 project-card-wrapper my-3 mx-auto position-relative overflow-hidden w-75' onClick={onClick}>
-        <div className={`project-card ${src.finished ? 'project-card-enabled' : 'project-card-disabled'} d-flex w-100 h-100 justify-content-center`}>
+        <div className={`project-card ${src.finished ? 'project-card-enabled' : 'project-card-disabled'} d-flex w-100 h-100 justify-content-center align-items-center`}>
             <p className='project-card-text text-center'>{src.description}</p>
         </div>
         <h4 className={`project-card-title ${src.finished ? 'project-card-title-enabled' : 'project-card-title-disabled'} text-center`}>{src.name}</h4>
