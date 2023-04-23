@@ -47,6 +47,11 @@ a:hover {
   color:#181818;
 }
 
+.btn-primary:disabled {
+  background-color: #85e796;
+  color: #181818;
+}
+
 .monospace {
   font-family: 'Anonymous Pro', monospace;
 }
@@ -84,7 +89,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #18181890;
+  background-color: #181818a0;
 }
 
 /* Main section */
@@ -203,16 +208,7 @@ a:hover {
 #suggestion-box {
   position: relative;
   background-color: #FAFAFA;
-  width: 300px;
   border-radius: 15px;
-  padding: 20px;
-  padding-top: 35px;
-}
-
-#close-suggestion-box {
-  position: absolute;
-  top: 10px;
-  right: 10px;
 }
 
 .about-text {
@@ -289,15 +285,13 @@ a:hover {
   border: solid #4cd463 3px;
   background-color: transparent;
   color: #4cd463;
-  transition: 0.25s ease-in;
+  transition: 0.25s ease-in-out;
 }
 
 #resume-btn:hover {
   background-color: #4cd463!important;
   color: #fafafa !important;
-  font-size: 1.6rem;
-  border-radius: 1.6rem;
-  transform: translateY(-0.05rem);
+  transform: scale(1.1);
 }
 
 #resume-btn:active {
@@ -317,14 +311,15 @@ a:hover {
 
 #projects-title {
   font-weight: 900;
-  font-size: 3rem;
-  letter-spacing: 1rem;
+  font-size: 3.5rem;
+  letter-spacing: 0.7rem;
 }
 
 #projects-subtitle {
   font-family: 'Anonymous Pro', monospace;
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 0.1rem;
+  transition: ease-out 0.5s;
 }
 
 #projects-wrapper div {
@@ -378,16 +373,18 @@ a:hover {
 
 .project-card-wrapper:hover {
   transform: scale(1.05);
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 .project-card-wrapper:hover .project-card-enabled {
   border-color: #4cd463;
   background-color: #404040;
+  cursor: pointer;
 }
 
 .project-card-wrapper:hover .project-card-title-enabled {
   background-color: #4cd463;
+  cursor: pointer;
 }
 
 .project-card-text {
@@ -449,28 +446,41 @@ a:hover {
   height: 20rem;
 }
 
+.contact-wrapper {
+  color:#fafafa
+}
+
 .contact-link {
   aspect-ratio: 1 / 1;
   height: 4.2rem;
-  border-radius: 50%;
-  border: #fafafa solid 3px;
+  border-radius: 15px;
+  background-color: #2d2d2d;
   transition: 0.25s ease-out;
 }
 
 .contact-label {
   font-weight: 300;
   letter-spacing: 0.05rem;
-  margin-left: 1rem;
   transition: 0.25s ease-out;
 }
 
 .contact-icon {
   font-size: 2.5rem;
-  transition: 0.25s ease-out;
+}
+
+.contact-wrapper:hover {
+  color: #fafafa;
+  cursor: pointer;
 }
 
 .contact-wrapper:hover .contact-label {
-  color: #54E86D;
+  transform: translateY(10px);
+  color:#85e796;
+}
+
+.contact-wrapper:hover .contact-link {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(84, 232, 109, 0.8);
 }
 
 /* Footer */

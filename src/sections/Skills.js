@@ -2,7 +2,7 @@
 import React from 'react'
 
 // internal
-import { skills } from '../assets';
+import { skills, resume } from '../assets';
 
 const Skill = ({ image, name }) => (
   <div className="d-flex flex-column justify-content-center align-items-center px-4">
@@ -32,7 +32,9 @@ const Skills = () => {
               <div id="right-fade" className='slider-fade'></div>
             </div>
           </div>
-          <button className='btn' id='resume-btn'>SEE FULL RÉSUMÉ</button>
+          <a href={resume} target='_blank' rel='noopener noreferrer'>
+            <button className='btn' id='resume-btn'>SEE FULL RÉSUMÉ</button>
+          </a>
         </div>
       </div>
     </div>

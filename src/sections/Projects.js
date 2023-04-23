@@ -1,6 +1,5 @@
 // external
-import { render } from '@testing-library/react'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 // internal
 import { projects } from '../assets'
@@ -16,27 +15,36 @@ const ProjectCard = ({ src, onClick }) => (
     </div>
 )
 
-const Projects = () => {
-    const [displayedProject, setDisplayedProject] = useState(null);
+const Projects = ({ displayProject }) => {
+    const [showSubtitle, setShowSubtitle] = useState(false)
 
-    const renderOverlay = () => (
-        <div className='fullscreen-overlay d-flex justify-content-center align-items-center'>
-            <button className='btn btn-primary' onClick={() => {setDisplayedProject(null)}}>Close</button>
-        </div>
-    )
+    const animationIndicator = useRef(null)
+
+    useEffect( ()=> {
+        const controlSubtitle = () => {
+            const {y, height} = animationIndicator.current.getClientRects()[0];
+            setShowSubtitle(y < window.innerHeight - (3 * height) && y > (4 * height))
+        };
+
+        controlSubtitle();
+        window.addEventListener('scroll', controlSubtitle)
+
+        return () => {
+            window.removeEventListener('scroll', controlSubtitle)
+        }
+    }, [] );
 
     return (
         <div id='projects' className='section d-flex'>
-            {displayedProject != null && renderOverlay()}
             <div className='container my-auto'>
                 <div className='row'>
                     <div className='col-12 col-xxl-5 d-flex flex-column justify-content-center align-items-center align-items-xxl-start'>
-                        <h2 id="projects-title" className='mb-3 mb-xxl-4'>PROJECTS<span id="underscore"></span></h2>
-                        <p id='projects-subtitle' className='text-center'>a sneak peek at some of my work...</p>
+                        <h2 id="projects-title" className='mt-3 mb-3'>PROJECTS<span id="underscore"></span></h2>
+                        <p id='projects-subtitle' className={`text-center opacity-${showSubtitle ? '100' : '0'}`} ref={animationIndicator}>a sneak peek at some of my work...</p>
                     </div>
                     <div id='projects-wrapper' className='col-12 col-xxl-7 d-flex flex-column align-items-stretch'>
                         {projects.map((project, i) => (
-                            <ProjectCard src={project} key={i} onClick={() => {setDisplayedProject(project)}}/>
+                            <ProjectCard src={project} key={i} onClick={() => {project.finished && displayProject(project)}}/>
                         ))}
                     </div>
                 </div>

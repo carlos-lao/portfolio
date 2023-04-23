@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from 'react';
 // internal
 import { portrait } from '../assets';
 
-const FORM_SUBMIT = "https://script.google.com/macros/s/AKfycbylECUpNlIKdSbOWzamKmFcSAqZadIIqO0TzMDZ_s7hGaCMFxTCX-LG0Jkn5u7rXXVtMg/exec"
 const TYPING_SPEED = 125
 const PAUSE_TIME = 15
 const DIRECTION = {
@@ -18,11 +17,9 @@ const greetings = [
     "Hola,"
 ]
 
-const About = () => {
+const About = ({ showOverlay }) => {
     const [langIdx, setLangIdx] = useState(0)
     const [currGreeting, setCurrGreeting] = useState(greetings[langIdx].split(''))
-    const [showOverlay, setShowOverlay] = useState(false)
-    const [suggestion, setSuggestion] = useState('')
     const [liftPortrait, setLiftPortrait] = useState(false)
 
     const animationIndicator = useRef(null)
@@ -30,12 +27,14 @@ const About = () => {
     const interval = useRef()
     const currIdx = useRef()
 
-    const controlPortrait = () => {
-        const {y, height} = animationIndicator.current.getClientRects()[0];
-        setLiftPortrait(y < window.innerHeight - (0.25 * height) && y > (-0.25 * height))
-    };
-
-    useEffect( ()=> {
+    // add portrait animation
+    useEffect(() => {
+        const controlPortrait = () => {
+            const {y, height} = animationIndicator.current.getClientRects()[0];
+            setLiftPortrait(y < window.innerHeight - (0.5 * height) && y > (-0.5 * height))
+        };
+        
+        controlPortrait()
         window.addEventListener('scroll', controlPortrait)
 
         return () => {
@@ -89,52 +88,8 @@ const About = () => {
         }
     }, [currGreeting, langIdx])
 
-    const renderOverlay = () => (
-        <div className='fullscreen-overlay d-flex justify-content-center align-items-center'>
-            <div id='suggestion-box'>
-                <button type="button" className="btn-close" aria-label="Close" id="close-suggestion-box"
-                    onClick={() => {
-                        setShowOverlay(false)
-                        this.setSuggestion("")
-                    }}
-                ></button>
-                <form 
-                    id="suggestion-form"
-                    className='d-flex flex-column align-items-center fill-parent'
-                >
-                    <input 
-                        name="Activity" 
-                        type="text" 
-                        className="form-control my-3" 
-                        placeholder="What should I learn next?" 
-                        autoComplete="off"
-                    />
-                    <button 
-                        type="submit" 
-                        className={"btn btn-" + (suggestion.length === 0 ? "secondary" : "primary")}
-                        style={{ border: "none" }}
-                        disabled={suggestion.length === 0}
-                        onClick={e => {
-                            e.preventDefault()
-                            const data = new FormData(document.getElementById("suggestion-form"));
-                            const action = FORM_SUBMIT;
-                            fetch(action, {
-                                method: 'POST',
-                                body: data,
-                            })
-
-                            setShowOverlay(false)
-                            setSuggestion("")
-                        }}
-                    >Submit</button>
-                </form>
-            </div>
-        </div>
-    )
-
     return (
         <div id="about" className='section pb-5 pb-lg-0 d-flex'>
-            {showOverlay && renderOverlay()}
             <div className='container px-xl-5 my-auto'>
                 <div className='d-flex align-items-center justify-content-between'>
                     <div>
@@ -158,7 +113,7 @@ const About = () => {
                                     Obviously, I'm always open to picking up new hobbies! Since you're here anyway, why not&nbsp;
                                     <a id="suggest" href='#' onClick={(e) => {
                                         e.preventDefault()
-                                        setShowOverlay(true);
+                                        showOverlay();
                                         return false;
                                     }}>
                                         drop me a suggestion for what to pick up next
