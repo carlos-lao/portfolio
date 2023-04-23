@@ -2,7 +2,6 @@
 import React from 'react'
 
 // internal
-import { mainBackground } from '../assets';
 
 const ContactLink = ({ href, children, label, target }) => (
   <a className='d-flex align-items-center flex-column contact-wrapper mx-4' href={href} target={target}>
