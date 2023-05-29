@@ -1,5 +1,5 @@
 // external
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, forwardRef } from 'react'
 
 // internal
 import { projects } from '../assets'
@@ -15,7 +15,7 @@ const ProjectCard = ({ src, onClick }) => (
     </div>
 )
 
-const Projects = ({ displayProject }) => {
+const Projects = forwardRef(({ displayProject }, ref) => {
     const [showSubtitle, setShowSubtitle] = useState(false)
 
     const animationIndicator = useRef(null)
@@ -35,7 +35,7 @@ const Projects = ({ displayProject }) => {
     }, [] );
 
     return (
-        <div id='projects' className='section d-flex'>
+        <div id='projects' className='section py-5 d-flex' ref={ref}>
             <div className='container my-auto'>
                 <div className='row'>
                     <div className='col-12 col-xxl-5 d-flex flex-column justify-content-center align-items-center align-items-xxl-start'>
@@ -51,6 +51,6 @@ const Projects = ({ displayProject }) => {
             </div>
         </div>
     )
-};
+})
 
 export default Projects;

@@ -1,4 +1,3 @@
-export {default as Navbar} from './Navbar.js';
 export {default as Main} from './Main.js';
 export {default as Projects} from './Projects.js';
 export {default as About} from './About.js';

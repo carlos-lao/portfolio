@@ -1,5 +1,5 @@
 // external
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, forwardRef } from 'react';
 
 // internal
 import { portrait } from '../assets';
@@ -17,7 +17,7 @@ const greetings = [
     "Hola,"
 ]
 
-const About = ({ showOverlay }) => {
+const About = forwardRef(({ showOverlay }, ref) => {
     const [langIdx, setLangIdx] = useState(0)
     const [currGreeting, setCurrGreeting] = useState(greetings[langIdx].split(''))
     const [liftPortrait, setLiftPortrait] = useState(false)
@@ -89,8 +89,8 @@ const About = ({ showOverlay }) => {
     }, [currGreeting, langIdx])
 
     return (
-        <div id="about" className='section pb-5 pb-lg-0 d-flex'>
-            <div className='container px-xl-5 my-auto'>
+        <div id="about" className='section pb-5 pb-lg-0 d-flex' ref={ref}>
+            <div className='container my-auto'>
                 <div className='d-flex align-items-center justify-content-between'>
                     <div>
                         <div className='row align-items-center'>
@@ -129,6 +129,6 @@ const About = ({ showOverlay }) => {
             </div>
         </div>
     )
-};
+})
 
 export default About;

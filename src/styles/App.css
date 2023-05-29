@@ -14,11 +14,58 @@ font-family: 'Bebas Neue', cursive;
   html {
     font-size: 15px;
   }
+  .container {
+    margin-right: 22.5px;
+  }
+  .navbar {
+    right: 5px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   html {
     font-size: 20px;
+  }
+  .navbar {
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .project-details {
+    max-width: 85vw;
+    max-height: 90vh;
+  }
+  .project-demo-laptop {
+    max-width: 60%;
+  }
+  .project-demo-iphone {
+    max-height: 30vh;
+  }
+  .iphone-demo-gif {
+    top: 5px;
+    left: 71px;
+    height: 95%;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .project-details {
+    max-width: 70vw;
+    max-height: 70vh;
+  }
+  .project-demo-laptop {
+    max-width: 30vw;
+  }
+  .project-demo-iphone {
+    max-width: 50%;
+  }
+  .iphone-demo-gif {
+    top: 12px;
+    left: 15px;
+    height: 95%;
+    border-radius: 15px;
   }
 }
 
@@ -29,15 +76,16 @@ body {
 }
 
 a {
-  color: #54E86D;
+  color: #4cd463;
   text-decoration: none;
 }
 
 a:hover {
-  color: #4cd463;
+  color: #85e796;
 }
 
 .btn-primary {
+  border: none;
   background-color: #54E86D;
   color: #181818;
 }
@@ -77,7 +125,6 @@ a:hover {
 
 .section {
   z-index: 0;
-  min-height: 100vh;
   position: relative;
 }
 
@@ -92,7 +139,54 @@ a:hover {
   background-color: #181818a0;
 }
 
+#nav-overlay {
+  background: linear-gradient(to bottom, #181818 0%,#18181800 30%);
+  z-index: 100;
+  opacity: 100%;
+  transition: 0.2s ease-in;
+}
+
+.nav-text {
+  font-size: 1.25rem;
+  letter-spacing: 0.2rem;
+  margin-top: 25px;
+}
+
+.navbar {
+  position: fixed;
+  height: 100vh;
+  z-index: 1000;
+  width: 22.5px;
+}
+
+.nav-button, .nav-border {
+  display: block;
+  height: 12.5px;
+  width: 12.5px;
+  box-sizing: content-box;
+  border-radius: 50%;
+}
+
+.nav-button {
+  background-color: #88888877;
+}
+
+.nav-border {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 2.5px solid transparent;
+  transition: 0.2s ease-in;
+}
+
+.nav-border:hover, .nav-button-hovered {
+  border-color: #FAFAFA;
+}
+
 /* Main section */
+#main {
+  min-height: 100vh;
+}
+
 #title-overlay {
   box-sizing: border-box;
   z-index: -1;
@@ -116,7 +210,7 @@ a:hover {
 }
 
 #subtitle {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   letter-spacing: 0.2rem;
 }
@@ -163,7 +257,8 @@ a:hover {
 }
 
 /* About section */
-#about {
+#about { 
+  min-height: 100vh;
   box-shadow: 0 5px 10px #888;
   clip-path: polygon(0 0, 100% 0, 100% 200%, 0 200%);
   z-index: 1;
@@ -218,6 +313,8 @@ a:hover {
 
 /* Skills section */
 #skills {
+  min-height: 70vh;
+  overflow: hidden;
   background-color: #DEDEDE;
 }
 
@@ -225,30 +322,21 @@ a:hover {
   font-weight: 900;
   font-size: 4rem;
   letter-spacing: 1rem;
-  margin-bottom: 13vh;
   color: #181818;
 }
 
 #skills-text {
   font-weight: 200;
   font-size: 1.5rem;
-  margin-bottom: 5vh;
   color: #181818;
 }
 
 .skill-logo {
-  height: 20vh;
-}
-
-.skill-label {
-  font-size: 0.85rem;
-  letter-spacing: 0.2rem;
-  text-align: center;
-  color:#181818;
+  height: 18vh;
 }
 
 .slider-container {
-  height: 25vh;
+  height: 18vh;
 }
 
 .slider {
@@ -277,30 +365,29 @@ a:hover {
 }
 
 #resume-btn {
-  margin-top: 13vh;
-  border-radius: 1.5rem;
+  border-radius: 1.8rem;
   font-weight: 900;
   letter-spacing: 0.2rem;
+  padding: 0.3rem 3.9rem;
   font-size: 1.5rem;
   border: solid #4cd463 3px;
-  background-color: transparent;
-  color: #4cd463;
+  background-color: #4cd463;
+  color: #fafafa;
   transition: 0.25s ease-in-out;
 }
 
 #resume-btn:hover {
-  background-color: #4cd463!important;
-  color: #fafafa !important;
+  border-color: #54E86D;
+  background-color: #54E86D !important;
+  color: #fff;
   transform: scale(1.1);
 }
 
-#resume-btn:active {
-  transition: 0.1s;
-  border-color: #54E86D;
-  background-color: #54E86D !important;
+/* Projects section */
+#projects {
+  /* min-height: 100vh; */
 }
 
-/* Projects section */
 #underscore {
   position: relative;
   top: -0.5rem;
@@ -316,7 +403,6 @@ a:hover {
 }
 
 #projects-subtitle {
-  font-family: 'Anonymous Pro', monospace;
   font-size: 1rem;
   letter-spacing: 0.1rem;
   transition: ease-out 0.5s;
@@ -377,13 +463,12 @@ a:hover {
 }
 
 .project-card-wrapper:hover .project-card-enabled {
-  border-color: #4cd463;
-  background-color: #404040;
+  border-color: #54E86D;
   cursor: pointer;
 }
 
 .project-card-wrapper:hover .project-card-title-enabled {
-  background-color: #4cd463;
+  background-color: #54E86D;
   cursor: pointer;
 }
 
@@ -417,16 +502,83 @@ a:hover {
   right: -2rem;
 }
 
+.close-details-button {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: #FAFAFA;
+  transition: 0.1s ease-in;
+}
+
+.close-details-button:hover {
+  color: #ff5757;
+  cursor: pointer;
+}
+
+.project-details {
+  box-sizing: border-box;
+  background-color: #DEDEDE;
+  border-radius: 15px;
+  overflow: hidden;
+  color: #181818;
+}
+
+.project-details-top-bar {
+  position: relative;
+  background-color: #88888888;
+}
+
+.project-details-content {
+  z-index: 1;
+  margin-left: 1rem;
+}
+
+.project-details-title {
+  font-size: 1.25rem;
+  letter-spacing: 0.05rem;
+  color: #FAFAFA;
+  margin: 0;
+}
+
+.project-details-description {
+  font-size: 0.9rem;
+}
+
+.github-btn {
+  font-size: 0.9rem;
+}
+
+.demo {
+  position: absolute;
+  z-index: 1;
+}
+
+.demo-frame {
+  z-index: 1;
+  object-fit: contain;
+}
+
+.demo-frame-laptop {
+  min-width: 100%
+}
+
+.laptop-demo-gif {
+  top: 1%;
+  left: 10.9%;
+  width: 78.2%;
+  height: 86.5%;
+}
+
 /* Contact */
 #contact {
-  min-height: 85vh;
+  min-height: 80vh;
 }
 
 #contact-title {
   font-size: 4.5rem;
   font-weight: 900;
   letter-spacing: 0.3rem;
-  color:#54E86D;
+  color:#4cd463;
 }
 
 #contact-subtitle {
@@ -452,6 +604,7 @@ a:hover {
 }
 
 .contact-label {
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 0.05rem;
   transition: 0.25s ease-out;
@@ -474,6 +627,15 @@ a:hover {
 .contact-wrapper:hover .contact-link {
   transform: scale(1.2);
   box-shadow: 0 0 15px rgba(84, 232, 109, 0.8);
+}
+
+.contact-address {
+  color: #FAFAFA;
+  transition: 0.2s ease-in-out;
+}
+
+.contact-address:hover {
+  color: #85e796;
 }
 
 /* Footer */
