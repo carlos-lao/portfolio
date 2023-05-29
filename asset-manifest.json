@@ -1,34 +1,36 @@
 {
   "files": {
-    "main.css": "/static/css/main.d790cf9f.css",
-    "main.js": "/static/js/main.f24cfbc9.js",
+    "main.css": "/static/css/main.02a5d20f.css",
+    "main.js": "/static/js/main.f8b0b4cd.js",
+    "static/media/trojancheck-demo.gif": "/static/media/trojancheck-demo.f7e384743834dc1c83ca.gif",
+    "static/media/slh-demo.gif": "/static/media/slh-demo.be9257b9b5bdc956907f.gif",
     "static/media/portrait.jpg": "/static/media/portrait.2ae868c1ac479f6ca5e5.jpg",
+    "static/media/clubsc-demo.gif": "/static/media/clubsc-demo.574279bf1ba511ae0952.gif",
     "static/media/main-bg.jpeg": "/static/media/main-bg.ae25211bc85bb6f54520.jpeg",
     "static/media/python.png": "/static/media/python.a47b8a346bdd1f18cd78.png",
     "static/media/logo.png": "/static/media/logo.44448ab0ef3d31e5481d.png",
-    "static/media/resume.pdf": "/static/media/resume.e2f34b2853725f094955.pdf",
+    "static/media/resume.pdf": "/static/media/resume.3cbad183c588216de4fe.pdf",
     "static/media/c++.png": "/static/media/c++.fc461cc8303a38559c80.png",
     "static/media/react.png": "/static/media/react.21ad3ab2b54b6b04c997.png",
     "static/media/swift.png": "/static/media/swift.891ee9d4397b00e614d3.png",
     "static/media/keras.png": "/static/media/keras.525a9eacc668fc072654.png",
     "static/media/php.png": "/static/media/php.e31b1d78a08e414ad79f.png",
     "static/media/opencv.png": "/static/media/opencv.3253ab6bcc4855936da4.png",
+    "static/media/laptop-frame.png": "/static/media/laptop-frame.6b613bb01af28f307b36.png",
     "static/media/firebase.png": "/static/media/firebase.f111334d3de668addcfc.png",
     "static/media/html-css.png": "/static/media/html-css.4e56db268e82f3944e03.png",
     "static/media/aws-amplify.png": "/static/media/aws-amplify.341ca4a252cbe836726f.png",
-    "static/media/trojancheck-icon.png": "/static/media/trojancheck-icon.4575decc9adf76b25815.png",
     "static/media/mongodb.png": "/static/media/mongodb.7a16fc61d457c9e340e2.png",
     "static/media/java.png": "/static/media/java.f5dd86c3ef6ef3f85acf.png",
-    "static/media/clubsc-icon.png": "/static/media/clubsc-icon.8c777b22aa657129625c.png",
     "static/media/sql.png": "/static/media/sql.f696bdb2fb4937ea0275.png",
     "static/media/express.png": "/static/media/express.86337f614092031626c8.png",
     "static/media/javascript.png": "/static/media/javascript.045099358b891da0f552.png",
     "index.html": "/index.html",
-    "main.d790cf9f.css.map": "/static/css/main.d790cf9f.css.map",
-    "main.f24cfbc9.js.map": "/static/js/main.f24cfbc9.js.map"
+    "main.02a5d20f.css.map": "/static/css/main.02a5d20f.css.map",
+    "main.f8b0b4cd.js.map": "/static/js/main.f8b0b4cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.d790cf9f.css",
-    "static/js/main.f24cfbc9.js"
+    "static/css/main.02a5d20f.css",
+    "static/js/main.f8b0b4cd.js"
   ]
 }
