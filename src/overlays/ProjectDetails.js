@@ -28,6 +28,7 @@ const ProjectDetails = ({ project, hide }) => {
             <p className='project-details-description'>{project.detailedDescription}</p>
             <div className='d-flex justify-content-center justify-content-lg-start'>
               <a href={project.source} target='_blank' className='btn btn-primary github-btn'>View on Github</a>
+              {project?.demoURL && <a href={project.demoURL} target='_blank' className='btn btn-primary github-btn open-btn'>Open Project</a>}
             </div>
           </div>
         </div>

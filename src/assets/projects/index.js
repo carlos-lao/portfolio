@@ -1,6 +1,8 @@
 import clubSCDemo from './clubsc-demo.gif'
 import trojanCheckDemo from './trojancheck-demo.gif'
 import slhDemo from './slh-demo.gif'
+import setupDemo from './setup-demo.gif'
+import unileaseDemo from './unilease-demo.gif'
 
 const DEVICES = {
     computer: "computer",
@@ -8,6 +10,25 @@ const DEVICES = {
 };
 
 const projects = [
+    {
+        name: "setUP for Spotify",
+        description: "Instantly create a playlist from a concert set list.",
+        detailedDescription: "This is a toy project I coded independently using React and AWS Lambda and Amplify. Though the application primarily relies on the setlist.fm and Spotify APIs, using an AWS Lambda REST API to host a serverless middleware to evade CORS restrictions. This was a fun little project to keep my coding skills sharp and also help me prepare for some upcoming concerts!",
+        source: "https://github.com/carlos-lao/slh-repository",
+        demoURL: "https://carlos-lao.github.io/setup-for-spotify/",
+        demo: setupDemo,
+        device: DEVICES.computer,
+        finished: true,
+    },
+    {
+        name: "UniLease",
+        description: "An application to help university students sublease their property.",
+        detailedDescription: "This is a project I am independently developing for a real estate agent. The application is coded entirely using React Native and AWS Amplify. This project has not only given me valuable experience with GraphQL, DynamoDB, S3, and more, but has also provided me the opportunity to put my software engineering abilities to the test. From requirements extraction to prototyping and testing; the experience has been nothing short of rewarding.",
+        source: "https://github.com/carlos-lao/university-subleasing",
+        demo: unileaseDemo,
+        device: DEVICES.phone,
+        finished: false,
+    },
     {
         name: "ClubSC",
         description: "A platform to find and join clubs at USC and to monitor their latest announcements.",
@@ -34,14 +55,6 @@ const projects = [
         demo: slhDemo,
         device: DEVICES.computer,
         finished: true,
-    },
-    {
-        name: "UniLease",
-        description: "An application to help university students sublease their property.",
-        source: "",
-        demo: null,
-        device: DEVICES.phone,
-        finished: false,
     },
 ];
 

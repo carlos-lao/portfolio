@@ -100,7 +100,7 @@ const About = forwardRef(({ showOverlay }, ref) => {
                                 </h2>
                                 <h2 className="pb-4" id="about-name">I'm Carlos.</h2>
                                 <p className="about-text">
-                                    After graduating from USC with a double major in linguistics and computer science, I am excited to break into the world of software
+                                    After graduating from USC with a double major in computer science and linguistics, I am excited to break into the world of software
                                     engineering as an aspiring full-stack developer. Whatever the task at hand, I'm ready to take on any challenge with no hesitation.
                                 </p>
                                 <p className="about-text">

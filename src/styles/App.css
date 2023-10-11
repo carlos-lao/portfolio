@@ -545,7 +545,11 @@ a:hover {
 }
 
 .github-btn {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+}
+
+.open-btn {
+  margin-left: 1rem;
 }
 
 .demo {
@@ -564,9 +568,9 @@ a:hover {
 
 .laptop-demo-gif {
   top: 1%;
-  left: 10.9%;
-  width: 78.2%;
-  height: 86.5%;
+  left: 10.7%;
+  width: 78.6%;
+  height: 87.5%;
 }
 
 /* Contact */
