@@ -100,13 +100,10 @@ const About = forwardRef(({ showOverlay }, ref) => {
                                 </h2>
                                 <h2 className="pb-4" id="about-name">I'm Carlos.</h2>
                                 <p className="about-text">
-                                    After graduating from USC with a double major in computer science and linguistics, I am excited to break into the world of software
-                                    engineering as an aspiring full-stack developer. Whatever the task at hand, I'm ready to take on any challenge with no hesitation.
+                                    I'm a software engineer based in San Francisco. At Applied Intuition, I built developer tools and CI infrastructure, including a workspace platform that helped more than 10 workspaces move to reproducible development environments.
                                 </p>
                                 <p className="about-text">
-                                    As a naturally curious person and passionate learner, I am always looking to expand my skillset. This has made me an adaptable
-                                    problem-solver: ready to put new skills to use at a moment's notice. When the next game-changing development is always just around
-                                    the corner, I'm there waiting.
+                                    I also built a code ownership service and a platform for tracking test reliability. Before that, I built Python and React tools to automate retail workflows at California Costumes. I studied computer science and linguistics at USC and worked on linguistic data and LLM evaluation at Meta.
                                 </p>
                                 <p className="about-text">
                                     When I'm not coding, I like to run, sing, play guitar, learn new languages, and—more recently—crochet. I'm also a musical theater kid at heart.
@@ -121,7 +118,7 @@ const About = forwardRef(({ showOverlay }, ref) => {
                                 </p>
                             </div>
                             <div className='col-12 col-lg-6 col-xl-5 d-flex justify-content-center align-items-center'>
-                                <img src={portrait} id="portrait" className={liftPortrait ? 'hover-portrait' : ''} ref={animationIndicator}/>
+                                <img src={portrait} alt="Carlos Lao" id="portrait" className={liftPortrait ? 'hover-portrait' : ''} ref={animationIndicator}/>
                             </div>
                         </div>
                     </div>
