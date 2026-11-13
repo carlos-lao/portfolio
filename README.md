@@ -1,6 +1,6 @@
 # Carlos Lao’s portfolio
 
-Personal website for Carlos Lao, a software engineer in San Francisco. The site features selected engineering work, a short bio, and a downloadable résumé. [Visit cdrlao.com](https://cdrlao.com).
+Personal website for Carlos Lao, a software engineer in San Francisco. The site features a short bio, skills, projects, and a downloadable résumé. [Visit cdrlao.com](https://cdrlao.com).
 
 ## Run locally
 
@@ -15,7 +15,7 @@ Open [localhost:3000](http://localhost:3000). Run `npm run build` to generate th
 
 ## Update the site
 
-- Edit the work, bio, and contact links in `src/App.js`.
+- Edit the bio and contact links in `src/sections/About.js` and `src/sections/Contact.js`. Update the project list in `src/assets/projects/index.js`.
 - Edit the layout and typography in `src/styles/App.css`.
 - Replace `src/assets/resume.pdf` to update the résumé linked from the homepage.
 - Edit the page title and search description in `public/index.html`.
